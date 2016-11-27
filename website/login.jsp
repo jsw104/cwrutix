@@ -10,27 +10,60 @@
 
 <body>
 
+  <script>
+      function validate_login(){
+          var caseid = document.getElementById('caseid').value
+          var password = document.getElementById('password').value
+          if (caseid.length == 0) {
+              alert('please enter a Case ID');
+              return false;
+          }
+          if (password.length == 0) {
+              alert('please enter a password');
+              return false;
+          }
+      }
+
+      function validate_register(){
+          var caseid = document.getElementById('register_caseid').value
+          var password = document.getElementById('register_password').value
+          var username = document.getElementById('username').value
+          if (username.length < 6) {
+              alert('username must be atleast 6 characters');
+              return false;
+          }
+          if (caseid.length < 3 || caseid.length > 7) {
+              alert('Case ID must have length between 3-7 characters');
+              return false;
+          }
+          if (password.length < 6) {
+              alert('password must be between 6-16 characters');
+              return false;
+          }
+      }
+    </script>
+
     <div id = "main">
 
         <fieldset>
         <legend>CWRUTix</legend>
         <div id = "login">
-            <form action="">
+            <form onsubmit = "return validate_login()">
                 <br>
-                <input type="text" name="caseid" maxLength="7" placeholder="Case ID"><br>
-                <input type="password" maxLength="16" name="pword" placeholder="Password"><br>
-                <input type="submit" value="Login">
+                <input type="text" id="caseid" maxLength="7" placeholder="Case ID"><br>
+                <input type="password" maxLength="16" id="password" placeholder="Password"><br>
+                <input type="submit" value="Login" name="submit">
                 <br>
             </form>
         </div>
 
         <div id = "register">
-            <form action="">
+            <form onsubmit = "return validate_register()">
                 <br>
-                <input type="text" name="username" maxLength="16" placeholder="Username"><br>
-                <input type="text" name="caseid" maxLength="7" placeholder="Case ID"><br>
-                <input type="password" maxLength="16" name="pword" placeholder="Password"><br>
-                <input type="submit" value="Register">
+                <input type="text" id="username" maxLength="16" placeholder="Username"><br>
+                <input type="text" id="register_caseid" maxLength="7" placeholder="Case ID"><br>
+                <input type="password" maxLength="16" id="register_password" placeholder="Password"><br>
+                <input type="submit" value="Register" name="submit">
                 <br>
             </form>
         </div>
@@ -39,7 +72,6 @@
          </fieldset>
 
     </div>
-
 
     <script>
         $(".login_register").on("click", function () {
