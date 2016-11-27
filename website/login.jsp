@@ -48,7 +48,7 @@
         <fieldset>
         <legend>CWRUTix</legend>
         <div id = "login">
-            <form onsubmit = "return validate_login()" action = "query_formatter.jsp">
+            <form onsubmit = "return validate_login()" action = "home.jsp">
                 <br>
                 <input type="text" id="caseid" maxLength="7" placeholder="Case ID"><br>
                 <input type="password" maxLength="16" id="password" placeholder="Password"><br>
