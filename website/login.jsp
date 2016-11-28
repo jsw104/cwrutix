@@ -2,7 +2,7 @@
 
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="layout.css">
+    <link rel="stylesheet" type="text/css" href="css/layout.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 
     <title>CWRUTix</title>
@@ -58,7 +58,7 @@
         </div>
 
         <div id = "register">
-            <form onsubmit = "return validate_register()" action = "query_formatter.jsp">
+            <form onsubmit = "return validate_register()" action = "sql_query_handling/register_sql_formatter.jsp">
                 <br>
                 <input type="text" id="username" maxLength="16" placeholder="Username"><br>
                 <input type="text" id="register_caseid" maxLength="7" placeholder="Case ID"><br>
