@@ -21,6 +21,11 @@
   padding: 20px;
   width: 75px;
   text-align: center;
-  display: block;background: #69;
+  display: block;background: #69F;
+}
 
+#navbar #holder ul li a:hover {
+  background: #F90;
+  color:#FFF;
+  text-shadow: 1px 1px 1px #000;
 }
