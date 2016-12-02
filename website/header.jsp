@@ -12,11 +12,11 @@
 <body>
     <div id = "header">
         <div id = "logo">
-            <a href="">
+            <a href="home.jsp">
             CWRUTix
         </a>
         <div id = "links">
-            <a href="test.jsp" class="link">Find Events</a>
+            <a href="events.jsp" class="link">Find Events</a>
             ||
             <a href="buy.jsp" class="link">Buy Tickets</a>
             ||
