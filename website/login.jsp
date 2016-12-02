@@ -12,34 +12,53 @@
 
   <script>
       function validate_login(){
-          var caseid = document.getElementById('caseid').value
-          var password = document.getElementById('password').value
-          if (caseid.length == 0) {
-              alert('please enter a Case ID');
-              return false;
+          var caseid = document.getElementById('caseid').value;
+          var password = document.getElementById('password').value;
+          var success = true;
+          if (caseid.length < 3) {
+              $('#caseid_alert').html("Please enter a valid Case ID.");
+              document.loginform.caseid.focus();
+              success = false;
+          } else {
+              $('#caseid_alert').html("");
           }
-          if (password.length == 0) {
-              alert('please enter a password');
-              return false;
+          if (password.length < 6) {
+              $('#pword_alert').html("Please enter a valid password.");
+              document.loginform.password.focus();
+              success = false;
+          } else {
+              $('#pword_alert').html("");
           }
+          return success;
       }
 
       function validate_register(){
-          var caseid = document.getElementById('register_caseid').value
-          var password = document.getElementById('register_password').value
-          var username = document.getElementById('username').value
+          var caseid = document.getElementById('register_caseid').value;
+          var password = document.getElementById('register_password').value;
+          var username = document.getElementById('username').value;
+          var success = true;
           if (username.length < 6) {
-              alert('username must be atleast 6 characters');
-              return false;
+              $('#reg_uname_alert').html("Username must be at least 6 characters long.");
+              document.registerform.username.focus();
+              success = false;
+          } else {
+              $('#reg_uname_alert').html("");
           }
           if (caseid.length < 3 || caseid.length > 7) {
-              alert('Case ID must have length between 3-7 characters');
-              return false;
+              $('#reg_caseid_alert').html("Please enter a valid Case ID.");
+              document.registerform.register_caseid.focus();
+              success = false;
+          }else {
+              $('#reg_caseid_alert').html("");
           }
           if (password.length < 6) {
-              alert('password must be between 6-16 characters');
-              return false;
+              $('#reg_pword_alert').html("Password must be between 6-16 characters in length.");
+              document.registerform.register_password.focus();
+              success = false;
+          } else {
+              $('#reg_pword_alert').html("");
           }
+          return success;
       }
     </script>
 
@@ -48,21 +67,26 @@
         <fieldset>
         <legend>CWRUTix</legend>
         <div id = "login">
-            <form onsubmit = "return validate_login()" action = "home.jsp">
-                <br>
-                <input type="text" id="caseid" maxLength="7" placeholder="Case ID"><br>
-                <input type="password" maxLength="16" id="password" placeholder="Password"><br>
+            <form name = "loginform" onsubmit = "return validate_login()" action = "home.jsp">
+
+                <input type="text" id="caseid" maxLength="7" placeholder="Case ID">
+                    <div id="caseid_alert" class="failure"></div>
+                <input type="password" maxLength="16" id="password" placeholder="Password">
+                    <div id="pword_alert" class="failure"></div>
                 <input type="submit" value="Login" name="submit">
                 <br>
             </form>
         </div>
 
         <div id = "register">
-            <form onsubmit = "return validate_register()" action = "sql_query_handling/register_sql_formatter.jsp">
-                <br>
-                <input type="text" id="username" maxLength="16" placeholder="Username"><br>
-                <input type="text" id="register_caseid" maxLength="7" placeholder="Case ID"><br>
-                <input type="password" maxLength="16" id="register_password" placeholder="Password"><br>
+            <form name ="registerform" onsubmit = "return validate_register()" action = "sql_query_handling/register_sql_formatter.jsp">
+
+                <input type="text" id="username" maxLength="16" placeholder="Username">
+                    <div id="reg_uname_alert" class="failure"></div>
+                <input type="text" id="register_caseid" maxLength="7" placeholder="Case ID">
+                    <div id="reg_caseid_alert" class="failure"></div>
+                <input type="password" maxLength="16" id="register_password" placeholder="Password">
+                    <div id="reg_pword_alert" class="failure"></div>
                 <input type="submit" value="Register" name="submit">
                 <br>
             </form>

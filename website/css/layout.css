@@ -43,6 +43,7 @@ html {
 
 fieldset{
     border: 2px solid rgba(0, 0, 0, 0.7);
+    padding-top:15px;
 }
 
 legend {
@@ -62,7 +63,7 @@ input[type="text"],input[type="password"] {
     height: 2em;
     /*outline: none;*/
     border: 1px solid rgba(185,185,185,1);
-    margin-bottom: 10px;
+    margin-top: 10px;
     padding-left:5px;
 }
 
@@ -77,6 +78,7 @@ input[type="submit"] {
     border: 1px solid rgba(185,185,185,1);
     padding: 0.3em 0.8em;
     color: rgba(69, 134, 255, 1);
+    margin-top:20px;
 }
 
 input[type="submit"]:focus{
@@ -104,4 +106,10 @@ input[type="submit"]:focus{
 
 .login_register:focus{
     outline:none;
+}
+
+.failure {
+    color:rgb(247, 45, 105);
+    font-family:'Raleway', sans-serif;
+    font-size:11px;
 }

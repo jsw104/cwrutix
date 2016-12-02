@@ -33,7 +33,7 @@ html {
     display: inline;
     font-size:18px;
     padding-left:30px;
-
+    overflow:hidden;
 }
 
 .link{
@@ -63,4 +63,32 @@ html {
     height: auto;
     left: 0;
     top:var(--header-height);
+    color: rgb(50, 50, 50);
+    font-family:'Arial';
+}
+
+
+h1 {
+    color:var(--link-color-blue);
+    font-size:40px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: normal;
+    line-height:5px;
+    margin:none;
+    padding:none;
+}
+
+h2 {
+    color:black;
+    font-size:15px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    line-height:5px;
+    padding:none;
+    margin:none;
+}
+
+
+b {
+    color:var(--bold-color-pink);
 }

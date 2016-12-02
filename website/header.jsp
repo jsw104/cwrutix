@@ -16,11 +16,10 @@
             CWRUTix
         </a>
         <div id = "links">
-            <a href="events.jsp" class="link">Find Events</a>
             ||
-            <a href="buy.jsp" class="link">Buy Tickets</a>
+            <a href="events.jsp" class="link">Upcoming Events</a>
             ||
-            <a href="sell.jsp" class="link">Sell Tickets</a>
+            <a href="tickets.jsp" class="link">My Tickets</a>
             ||
             <a href="profile.jsp" class="link">My Profile</a>
             ||
