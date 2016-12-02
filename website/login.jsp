@@ -15,13 +15,6 @@
           var caseid = document.getElementById('caseid').value;
           var password = document.getElementById('password').value;
           var success = true;
-          if (caseid.length < 3) {
-              $('#caseid_alert').html("Please enter a valid Case ID.");
-              document.loginform.caseid.focus();
-              success = false;
-          } else {
-              $('#caseid_alert').html("");
-          }
           if (password.length < 6) {
               $('#pword_alert').html("Please enter a valid password.");
               document.loginform.password.focus();
@@ -29,6 +22,14 @@
           } else {
               $('#pword_alert').html("");
           }
+          if (caseid.length < 3) {
+              $('#caseid_alert').html("Please enter a valid Case ID.");
+              document.loginform.caseid.focus();
+              success = false;
+          } else {
+              $('#caseid_alert').html("");
+          }
+
           return success;
       }
 
@@ -37,13 +38,14 @@
           var password = document.getElementById('register_password').value;
           var username = document.getElementById('username').value;
           var success = true;
-          if (username.length < 6) {
-              $('#reg_uname_alert').html("Username must be at least 6 characters long.");
-              document.registerform.username.focus();
+          if (password.length < 6) {
+              $('#reg_pword_alert').html("Password must be between 6-16 characters in length.");
+              document.registerform.register_password.focus();
               success = false;
           } else {
-              $('#reg_uname_alert').html("");
+              $('#reg_pword_alert').html("");
           }
+
           if (caseid.length < 3 || caseid.length > 7) {
               $('#reg_caseid_alert').html("Please enter a valid Case ID.");
               document.registerform.register_caseid.focus();
@@ -51,12 +53,13 @@
           }else {
               $('#reg_caseid_alert').html("");
           }
-          if (password.length < 6) {
-              $('#reg_pword_alert').html("Password must be between 6-16 characters in length.");
-              document.registerform.register_password.focus();
+
+          if (username.length < 6) {
+              $('#reg_uname_alert').html("Username must be at least 6 characters long.");
+              document.registerform.username.focus();
               success = false;
           } else {
-              $('#reg_pword_alert').html("");
+              $('#reg_uname_alert').html("");
           }
           return success;
       }
