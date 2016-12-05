@@ -39,7 +39,7 @@
           var username = document.getElementById('username').value;
           var success = true;
           if (password.length < 6) {
-              $('#reg_pword_alert').html("Password must be between 6-16 characters in length.");
+              $('#reg_pword_alert').html("Password must be 6-16 characters in length.");
               document.registerform.register_password.focus();
               success = false;
           } else {
